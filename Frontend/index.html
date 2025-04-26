@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car X change</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <link rel="stylesheet" href="./CSS/styles.css">
+
+</head>
+<body class="font-['Inter'] bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+    
+    <div class="min-h-screen">
+
+        <!-- Start navbar -->
+        <div class="bg-white shadow-md w-full sticky top-0 z-50">
+            <nav class="bg-gray-800/95 backdrop-blur-sm border-b border-gray-700/80 sticky top-0 z-50">
+                <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <!-- Logo -->
+                        <div class="text-xl font-bold text-gray-300">
+                            Car<span class="text-blue-400">X</span><span class="text-orange-400">change</span>
+                        </div>
+    
+                        <!-- Mobile menu button -->
+                        <div class="flex items-center md:hidden">
+                            <button id="mobile-menu-button" class="p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                            </button>
+                        </div>
+    
+                        <!-- Navigation Links (Desktop) -->
+                        <div class="hidden md:flex space-x-6">
+                            <a href="./index.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium transition-colors duration-200 flex items-center hover:bg-gray-700/30">
+                                <i class="fas fa-home mr-2 text-sm text-blue-400"></i>Home
+                            </a>
+                            <a href="./buycar.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium transition-colors duration-200 flex items-center hover:bg-gray-700/30">
+                                <i class="fas fa-car mr-2 text-sm text-blue-400"></i>Buy
+                            </a>
+                            <a href="./sellcar.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium transition-colors duration-200 flex items-center hover:bg-gray-700/30">
+                                <i class="fas fa-dollar-sign mr-2 text-sm text-blue-400"></i>Sell
+                            </a>
+                            <a href="#AboutUs" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium transition-colors duration-200 flex items-center hover:bg-gray-700/30">
+                                <i class="fas fa-info-circle mr-2 text-sm text-blue-400"></i>About
+                            </a>
+                        </div>
+    
+                        <!-- Sign In Button (Desktop) -->
+                        <a href="./Login.html"
+                        class="hidden md:inline-flex items-center px-4 py-2 border border-blue-500 text-sm font-medium rounded-md text-white hover:text-blue-400 hover:border-blue-400 transition-all duration-300 group">
+                        <i class="fas fa-user mr-2 text-blue-400 transition-transform duration-300 group-hover:-translate-x-1"></i>
+                        Sign In
+                        </a>
+
+
+
+
+                    </div>
+                </div>
+    
+                <!-- Mobile Menu (Hidden by default) -->
+                <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-gray-800/95 backdrop-blur-sm">
+                    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <a href="./index.html" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">
+                            <i class="fas fa-home mr-2 text-sm text-blue-400"></i>Home
+                        </a>
+                        <a href="./buycar.html" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">
+                            <i class="fas fa-car mr-2 text-sm text-blue-400"></i>Buy
+                        </a>
+                        <a href="./sellcar.html" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">
+                            <i class="fas fa-dollar-sign mr-2 text-sm text-blue-400"></i>Sell
+                        </a>
+                        <a href="#AboutUs" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">
+                            <i class="fas fa-info-circle mr-2 text-sm text-blue-400"></i>About
+                        </a>
+                        <a href="./Login.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:border-blue-400 transition-all duration-300 group">
+                        <i class="fas fa-user mr-2 text-blue-400 transition-transform duration-300 "></i>
+                        Sign In
+                        </a>
+
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--End navbar -->
+       
+        
+        
+        <!-- Start Section 1 -->
+        <section class="pt-20 pb-40 min-h-screen flex items-center relative">
+            <div class="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="flex-1 lg:max-w-2xl space-y-8 text-left">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-100 mb-6 leading-tight">
+                            Discover Your 
+                            <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                                Dream Ride
+                            </span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-400 max-w-xl">
+                            Explore 50,000+ certified vehicles in our premium automotive marketplace
+                        </p>
+                    </div>
+    
+                      <!-- CTA Buttons -->
+                      <div class="flex flex-row flex-nowrap gap-2 sm:gap-4 px-2 sm:px-0" >
+                        <a  href="./buycar.html" class="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 
+                                    text-white px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-xl font-semibold transition-all duration-300 
+                                    transform hover:scale-[1.02] shadow-lg hover:shadow-blue-800/40 
+                                    flex items-center gap-2 group flex-shrink-0 w-[calc(50%-4px)] sm:w-auto sm:min-w-[200px]
+                                    border border-blue-400/20 hover:border-blue-300/30
+                                    ring-2 ring-blue-500/10 hover:ring-blue-400/20">
+                            Browse All Cars
+                            <i class="fa-solid fa-car-side transition-transform duration-300 group-hover:translate-x-2 
+                                    text-orange-400 group-hover:text-orange-300"></i>
+                        </a>
+                    
+                        <a href="./sellcar.html" class="border-2 border-blue-400/60 hover:border-blue-300/80 
+                                    text-blue-200 hover:text-blue-100 px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-xl 
+                                    font-semibold transition-all duration-300 
+                                    transform hover:scale-[1.02] 
+                                    bg-gradient-to-br from-blue-900/10 to-blue-800/10 hover:from-blue-900/30 hover:to-blue-800/30 
+                                    flex items-center gap-2 group flex-shrink-0 w-[calc(50%-4px)] sm:w-auto sm:min-w-[200px]
+                                    shadow-sm hover:shadow-blue-800/30 
+                                    ring-1 ring-blue-500/20 hover:ring-blue-400/30">
+                            Sell Your Car
+                            <i class="fa-solid fa-handshake transition-transform duration-300 
+                                    group-hover:translate-x-2 text-orange-400/90 group-hover:text-orange-300"></i>
+                        </a>
+                    </div>
+    
+                    
+    
+                     <!-- Stats -->
+                    <div class="grid grid-cols-2 sm:flex flex-wrap gap-3 md:gap-6 justify-center lg:justify-start mt-8" >
+                        <!-- العنصر الأول -->
+                        <div class="flex items-center gap-2 bg-gray-800/30 backdrop-blur-sm px-4 py-2 rounded-xl 
+                                    border border-gray-700/50 hover:border-blue-400/30 transition-all duration-300
+                                    hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-900/20
+                                    text-sm min-w-[160px]">
+                            <div class="text-orange-400 font-bold text-xl md:text-3xl">25K+</div>
+                            <div class="text-blue-200 font-medium">
+                                <span class="block text-blue-300/80 text-xs">Satisfied</span>
+                                Customers
+                            </div>
+                            <i class="fas fa-users text-blue-400/50 ml-1 text-lg"></i>
+                        </div>
+
+                        <!-- العنصر الثاني -->
+                        <div class="flex items-center gap-2 bg-gray-800/30 backdrop-blur-sm px-4 py-2 rounded-xl 
+                                    border border-gray-700/50 hover:border-blue-400/30 transition-all duration-300
+                                    hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-900/20
+                                    text-sm min-w-[160px]">
+                            <div class="text-orange-400 font-bold text-xl md:text-3xl">50+</div>
+                            <div class="text-blue-200 font-medium">
+                                <span class="block text-blue-300/80 text-xs">Trusted</span>
+                                Partnerships
+                            </div>
+                            <i class="fas fa-handshake text-blue-400/50 ml-1 text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="flex-1 max-w-3xl relative mt-12 lg:mt-0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform 
+                                duration-500 group isolate">
+                        <!-- Video Container with Enhanced Controls -->
+                        <video 
+                            id="heroVideo"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="auto"
+                            class="w-full h-full object-cover brightness-90 group-hover:brightness-100 transition-[filter] duration-500"
+                            onended="this.play()"
+                        >
+                            <source src="../video/bmw.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                
+                        <!-- Professional Overlay Effects -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-radial-gradient from-transparent to-black/40"></div>
+                
+                        <!-- Content with Professional Animation -->
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white space-y-3 
+                                   transform transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100
+                                   opacity-95 translate-y-2">
+                            <h3 class="text-3xl font-bold tracking-tighter drop-shadow-xl">
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                                    BMW M3 Competition
+                                </span>
+                            </h3>
+                            <p class="text-lg font-medium text-blue-300/90 hover:text-blue-400 transition-colors">
+                                Own the Ultimate Driving Machine
+                            </p>
+                            <button class="mt-2 px-8 py-2.5 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold 
+                                          transform transition-all duration-300 hover:scale-105 shadow-lg">
+                                Explore Now
+                            </button>
+                        </div>
+                
+                        
+                    </div>
+                </div>
+                
+                <style>
+                    /* Custom animation for professional look */
+                    @keyframes pulse-overlay {
+                        0% { opacity: 0.6; transform: scale(1); }
+                        50% { opacity: 1; transform: scale(1.02); }
+                        100% { opacity: 0.6; transform: scale(1); }
+                    }
+                    
+                    .bg-radial-gradient {
+                        background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+                    }
+                </style>
+                
+            </div>
+    
+            <!-- Decorative Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl"></div>
+            </div>
+        </section>
+        <!-- End Section 1 -->
+                <!-- Start Marketplace Section -->
+        <section class="relative py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                        Buy or Sell Your Car 
+                        <span class="text-blue-400">Stress-Free</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Seamless vehicle transactions between private parties with full protection
+                    </p>
+                </div>
+
+                <!-- Dual Process Flow -->
+                <div class="grid md:grid-cols-2 gap-12 mb-24">
+                    <!-- Seller's Journey -->
+                    <div class="bg-gray-800 rounded-2xl p-8 shadow-2xl border border-gray-700">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-tag text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Seller's Process</h3>
+                        </div>
+                        <ol class="space-y-6">
+                            <li class="flex gap-4">
+                                <div class="w-8 h-8 bg-blue-400/20 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-400 font-bold">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">List Your Vehicle</h4>
+                                    <p class="text-gray-300">Create a compelling listing with photos & details</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="w-8 h-8 bg-blue-400/20 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-400 font-bold">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Receive Offers</h4>
+                                    <p class="text-gray-300">Review verified buyer offers in real-time</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="w-8 h-8 bg-blue-400/20 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-400 font-bold">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Secure Payment</h4>
+                                    <p class="text-gray-300">Escrow-protected transaction with instant notification</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Buyer's Journey -->
+                    <div class="bg-gray-800 rounded-2xl p-8 shadow-2xl border border-gray-700">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-dollar text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Buyer's Process</h3>
+                        </div>
+                        <ol class="space-y-6">
+                            <li class="flex gap-4">
+                                <div class="w-8 h-8 bg-green-400/20 rounded-full flex items-center justify-center">
+                                    <span class="text-green-400 font-bold">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Find Your Match</h4>
+                                    <p class="text-gray-300">Search our verified inventory with smart filters</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="w-8 h-8 bg-green-400/20 rounded-full flex items-center justify-center">
+                                    <span class="text-green-400 font-bold">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Arrange Inspection</h4>
+                                    <p class="text-gray-300">Schedule professional verification & test drive</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="w-8 h-8 bg-green-400/20 rounded-full flex items-center justify-center">
+                                    <span class="text-green-400 font-bold">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Complete Purchase</h4>
+                                    <p class="text-gray-300">Secure payment gateway with purchase protection</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+        <!-- End Marketplace Section -->
+
+    
+    </div>
+    <section class="py-16 w-full bg-gradient-to-br from-gray-900/50 via-blue-900/30 to-gray-900/50">
+        <div class="px-6 md:px-12">
+            <!-- Header -->
+            <div class="mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-gray-100 mb-2">Featured Vehicles</h2>
+                    <p class="text-lg text-gray-400">Curated selection of premium automobiles</p>
+                </div>
+
+                <!-- Flex container for larger screens -->
+                <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+                    
+
+                    <!-- View All Listings link -->
+                    <a href="./buycar.html" class="relative flex items-center gap-2 text-orange-400 font-semibold hover:text-orange-300 transition duration-300 group">
+                        View All Listings
+                        <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        <span class="absolute left-0 bottom-0 w-0 h-px bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Car Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Car 1 -->
+                <div class="relative group rounded-3xl overflow-hidden bg-gray-800/40 backdrop-blur-sm 
+                        border border-gray-700/60 hover:border-orange-400/30 transition-all duration-500 
+                        hover:shadow-2xl hover:shadow-orange-900/20">
+                    
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    
+                    <!-- Price Badge -->
+                    <div class="absolute top-4 right-4 bg-gradient-to-r from-orange-600 to-orange-500 text-white 
+                            px-5 py-2.5 rounded-full text-sm font-bold shadow-xl z-20 border border-orange-400/30 
+                            transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fa-solid fa-dollar-sign mr-1"></i>25,000
+                    </div>
+                    
+                    <!-- Image Container -->
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="../images/image-six.jpg" alt="Tesla Model 3" class="w-full h-full object-center transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                    </div>
+
+                    
+                    <!-- Details Container -->
+                    <div class="p-6 relative z-20">
+                        <!-- Title -->
+                        <h3 class="text-2xl font-bold text-gray-100 mb-4 truncate group-hover:text-orange-400 
+                                transition-colors duration-300">
+                            2020 Tesla Model 3 Standard Range
+                        </h3>
+                        
+                        <!-- Specifications Grid -->
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <!-- Condition -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-clipboard-check text-orange-400 text-xl mb-2"></i>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Condition</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Used</span>
+                                </div>
+                            </div>
+
+                            <!-- Color -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-6 h-6 rounded-full bg-black border-2 border-gray-300 
+                                            shadow-md mb-2"></div>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Color</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Black</span>
+                                </div>
+                            </div>
+
+                            <!-- Transmission -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-gears text-orange-400 text-xl mb-2"></i>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Transmission</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Automatic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <a href="./viewDetails.html" class="flex items-center justify-center space-x-3 w-full 
+                        bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-xl 
+                        hover:from-orange-700 hover:to-orange-600 transition-all duration-300 
+                        shadow-lg hover:shadow-xl border border-orange-400/30">
+                            <i class="fa-solid fa-circle-info text-lg"></i>
+                            <span class="font-semibold">Full Specs</span>
+                            <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 
+                                    transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Car 1 -->
+                <div class="relative group rounded-3xl overflow-hidden bg-gray-800/40 backdrop-blur-sm 
+                        border border-gray-700/60 hover:border-orange-400/30 transition-all duration-500 
+                        hover:shadow-2xl hover:shadow-orange-900/20">
+                    
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    
+                    <!-- Price Badge -->
+                    <div class="absolute top-4 right-4 bg-gradient-to-r from-orange-600 to-orange-500 text-white 
+                            px-5 py-2.5 rounded-full text-sm font-bold shadow-xl z-20 border border-orange-400/30 
+                            transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fa-solid fa-dollar-sign mr-1"></i>25,000
+                    </div>
+                    
+                    <!-- Image Container -->
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="../images/image-six.jpg" alt="Tesla Model 3" class="w-full h-full object-center transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                    </div>
+
+                    
+                    <!-- Details Container -->
+                    <div class="p-6 relative z-20">
+                        <!-- Title -->
+                        <h3 class="text-2xl font-bold text-gray-100 mb-4 truncate group-hover:text-orange-400 
+                                transition-colors duration-300">
+                            2020 Tesla Model 3 Standard Range
+                        </h3>
+                        
+                        <!-- Specifications Grid -->
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <!-- Condition -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-clipboard-check text-orange-400 text-xl mb-2"></i>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Condition</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Used</span>
+                                </div>
+                            </div>
+
+                            <!-- Color -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-6 h-6 rounded-full bg-black border-2 border-gray-300 
+                                            shadow-md mb-2"></div>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Color</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Black</span>
+                                </div>
+                            </div>
+
+                            <!-- Transmission -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-gears text-orange-400 text-xl mb-2"></i>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Transmission</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Automatic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <a href="./viewDetails.html" class="flex items-center justify-center space-x-3 w-full 
+                        bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-xl 
+                        hover:from-orange-700 hover:to-orange-600 transition-all duration-300 
+                        shadow-lg hover:shadow-xl border border-orange-400/30">
+                            <i class="fa-solid fa-circle-info text-lg"></i>
+                            <span class="font-semibold">Full Specs</span>
+                            <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 
+                                    transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Car 1 -->
+                <div class="relative group rounded-3xl overflow-hidden bg-gray-800/40 backdrop-blur-sm 
+                        border border-gray-700/60 hover:border-orange-400/30 transition-all duration-500 
+                        hover:shadow-2xl hover:shadow-orange-900/20">
+                    
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    
+                    <!-- Price Badge -->
+                    <div class="absolute top-4 right-4 bg-gradient-to-r from-orange-600 to-orange-500 text-white 
+                            px-5 py-2.5 rounded-full text-sm font-bold shadow-xl z-20 border border-orange-400/30 
+                            transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fa-solid fa-dollar-sign mr-1"></i>25,000
+                    </div>
+                    
+                    <!-- Image Container -->
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="../images/image-six.jpg" alt="Tesla Model 3" class="w-full h-full object-center transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                    </div>
+
+                    
+                    <!-- Details Container -->
+                    <div class="p-6 relative z-20">
+                        <!-- Title -->
+                        <h3 class="text-2xl font-bold text-gray-100 mb-4 truncate group-hover:text-orange-400 
+                                transition-colors duration-300">
+                            2020 Tesla Model 3 Standard Range
+                        </h3>
+                        
+                        <!-- Specifications Grid -->
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <!-- Condition -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-clipboard-check text-orange-400 text-xl mb-2"></i>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Condition</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Used</span>
+                                </div>
+                            </div>
+
+                            <!-- Color -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-6 h-6 rounded-full bg-black border-2 border-gray-300 
+                                            shadow-md mb-2"></div>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Color</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Black</span>
+                                </div>
+                            </div>
+
+                            <!-- Transmission -->
+                            <div class="spec-item p-3 rounded-xl bg-gray-700/40 hover:bg-orange-900/20 
+                                    transition-all duration-300 border border-gray-600/50">
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-gears text-orange-400 text-xl mb-2"></i>
+                                    <span class="text-xs font-semibold text-gray-400 uppercase">Transmission</span>
+                                    <span class="text-sm font-bold text-gray-200 mt-1">Automatic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <a href="./viewDetails.html" class="flex items-center justify-center space-x-3 w-full 
+                        bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-xl 
+                        hover:from-orange-700 hover:to-orange-600 transition-all duration-300 
+                        shadow-lg hover:shadow-xl border border-orange-400/30">
+                            <i class="fa-solid fa-circle-info text-lg"></i>
+                            <span class="font-semibold">Full Specs</span>
+                            <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 
+                                    transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Repeat similar structure for other car cards -->
+                
+            </div>
+        </div>
+    </section>
+      <!-- Start About Us Section -->
+<section id="AboutUs" class="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-semibold tracking-wide">
+                <span class="text-blue-400">About</span> <span class="text-white">Car</span><span class="text-blue-400">X</span><span class="text-orange-400">Change</span>
+              </h2>
+              
+            <p class="mt-2 text-4xl font-extrabold text-white tracking-tight hidden sm:block">
+                Empowering Connections Between Buyers and Sellers
+            </p>
+            <p class="mt-2 text-xl font-extrabold text-white tracking-tight sm:hidden">
+                Empowering Connections Between Buyers and Sellers
+            </p>
+        </div>
+
+        <div class="relative lg:grid lg:grid-cols-2 lg:gap-12">
+            <div class="mb-12 lg:mb-0">
+                <div class="space-y-6">
+                    <p class="text-lg md:text-xl text-gray-300 leading-8">
+                        At <strong><span class="text-white">Car</span><span class="text-blue-400">X</span><span class="text-orange-400">Change</span></strong>, we specialize in bridging the gap between sellers and buyers 
+                        through a smart, user-friendly, and secure digital platform that ensures smooth transactions.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-300 leading-8">
+                        Whether you're looking to sell your car or find the perfect deal, <strong><span class="text-white">Car</span><span class="text-blue-400">X</span><span class="text-orange-400">Change</span></strong> 
+                        makes the process easier with reliable tools, real-time listings, and 24/7 support.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative lg:mt-0">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Core Values Cards -->
+                    <div class="bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/60 
+                        hover:border-blue-400/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/20">
+                        <div class="flex items-center gap-4">
+                            <div class="flex-shrink-0 bg-blue-600/80 p-3 rounded-lg">
+                                <i class="fa-solid fa-rocket text-2xl text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-blue-400">Fast Deals</h3>
+                                <p class="mt-1 text-gray-300 text-sm">Find or sell a car quickly and easily</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/60 
+                        hover:border-blue-400/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/20">
+                        <div class="flex items-center gap-4">
+                            <div class="flex-shrink-0 bg-blue-600/80 p-3 rounded-lg">
+                                <i class="fa-solid fa-shield-halved text-2xl text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-blue-400">Secure Platform</h3>
+                                <p class="mt-1 text-gray-300 text-sm">Your safety is our top priority</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/60 
+                        hover:border-blue-400/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/20">
+                        <div class="flex items-center gap-4">
+                            <div class="flex-shrink-0 bg-blue-600/80 p-3 rounded-lg">
+                                <i class="fa-solid fa-globe text-2xl text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-blue-400">Nationwide Reach</h3>
+                                <p class="mt-1 text-gray-300 text-sm">Connecting users across the country</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/60 
+                        hover:border-blue-400/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/20">
+                        <div class="flex items-center gap-4">
+                            <div class="flex-shrink-0 bg-blue-600/80 p-3 rounded-lg">
+                                <i class="fa-solid fa-users-gear text-2xl text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-blue-400">Support You Can Trust</h3>
+                                <p class="mt-1 text-gray-300 text-sm">We're here for you every step of the way</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Us Section -->
+
+
+<!-- Start footer -->
+<footer class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 py-12 border-t border-gray-700/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand Section -->
+        <div class="space-y-4">
+            <h2 class="text-white text-2xl font-bold">
+                Car<span class="text-blue-400">X</span><span class="text-orange-400">change</span>
+            </h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                Revolutionizing automotive commerce through trusted transactions and innovative solutions.
+            </p>
+            <div class="flex space-x-5">
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-facebook text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-x-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-4">
+            <h3 class="text-blue-400 font-semibold text-lg mb-2">Explore</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Inventory</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Sell Vehicle</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Financing</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Valuation</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Certification</a></li>
+            </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="space-y-4">
+            <h3 class="text-blue-400 font-semibold text-lg mb-2">Support</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Contact Center</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">FAQs</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Documentation</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Security</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Legal</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="space-y-4">
+            <h3 class="text-blue-400 font-semibold text-lg mb-2">Stay Updated</h3>
+            <p class="text-gray-400 text-sm">Get exclusive market insights and early access to new features</p>
+            <form class="mt-4 flex gap-2">
+                <input type="email" placeholder="Email address" 
+                       class="w-full bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 
+                              rounded-lg px-4 py-3 text-gray-300 focus:outline-none 
+                              focus:border-blue-400/50 transition-all">
+                <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 
+                           px-6 rounded-lg text-white font-medium transition-all duration-300 
+                           shadow-lg hover:shadow-blue-900/30">
+                    Join
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 pt-8 border-t border-gray-700/50">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            &copy; 2025 CarXchange. All rights reserved.<br class="md:hidden">
+            <span class="md:mx-2">|</span> 
+            <a href="#" class="hover:text-blue-400">Privacy Portal</a> 
+            <span class="mx-2">|</span> 
+            <a href="#" class="hover:text-blue-400">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+<!-- End footer -->
+
+
+    <script src="JS/main.js"></script>
+    <script src="JS/joint.js"></script>
+</body>
+</html>

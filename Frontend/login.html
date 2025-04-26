@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarXchange | Automotive Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .form-container {
+            perspective: 1000px;
+            width: 100%;
+        }
+        
+        .form-card {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+            width: 100%;
+            height: 100%;
+        }
+        
+        .form-card.signup-mode {
+            transform: rotateY(180deg);
+        }
+        
+        .front, .back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .back {
+            transform: translateY(-50%) rotateY(180deg);
+        }
+        
+        .floating-car {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .input-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6);
+        }
+        
+        .input-effect:focus {
+            box-shadow: 0 2px 0 0 #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 h-screen overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="floating-car fixed top-4 right-4 md:top-20 md:right-20 opacity-10 z-0">
+        
+    </div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto h-full p-4 flex items-center justify-center">
+        <div class="form-container max-w-md w-full h-[600px]">
+            <div class="form-card">
+                <!-- Login Form -->
+                <div class="front bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-6 md:p-8 backdrop-blur-lg border border-gray-700">
+                    <div class="text-center mb-8 md:mb-12">
+                        <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-blue-100  mb-4">
+                            Car<span class="text-blue-400">X</span><span class="text-orange-400">change</span>
+
+
+                        </h1>
+                        <p class="text-gray-400 text-sm md:text-base">Welcome back! Log in to explore our latest car deals.
+                        </p>
+                    </div>
+
+                    <form id="loginForm" class="space-y-4 md:space-y-6" >
+                        <div>
+                            <input type="email" id="loginEmail" 
+                                   class="input-effect w-full bg-transparent text-white py-3 md:py-4 px-4 border-0 border-b-2 border-gray-600 focus:ring-0 focus:border-blue-500 placeholder-gray-500 text-sm md:text-base"
+                                   placeholder="Email Address" required>
+                            <p class="text-red-400 text-xs md:text-sm mt-1 md:mt-2 hidden" id="loginEmailError">Invalid email format</p>
+                        </div>
+
+                        <div class="relative">
+                            <input type="password" id="loginPassword" 
+                                   class="input-effect w-full bg-transparent text-white py-3 md:py-4 px-4 border-0 border-b-2 border-gray-600 focus:ring-0 focus:border-blue-500 placeholder-gray-500 pr-12 text-sm md:text-base"
+                                   placeholder="Password" required>
+                            <button type="button" onclick="togglePassword('loginPassword')" 
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-400 p-2">
+                                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </button>
+                            <p class="text-red-400 text-xs md:text-sm mt-1 md:mt-2 hidden" id="loginPasswordError">Password required</p>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 md:py-4 rounded-xl font-semibold text-sm md:text-base hover:shadow-lg hover:shadow-blue-500/30 transition-all">
+                            Login
+                        </button>
+                    </form>
+
+                    <p class="text-center mt-4 md:mt-6 text-gray-400 text-xs md:text-sm">
+                        New here? 
+                        <button onclick="toggleForms()" class="text-blue-400 hover:text-cyan-400 transition-colors">
+                            Create Account
+                        </button>
+                    </p>
+                </div>
+
+                <!-- Signup Form -->
+                <div class="back bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-6 md:p-8 backdrop-blur-lg border border-gray-700">
+                    <div class="text-center mb-8 md:mb-12">
+                        <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text mb-4">
+                            <span class="text-blue-500">Join</span> <span class="text-white">Car</span><span class="text-blue-400">X</span><span class="text-orange-400">change</span>
+
+
+                        </h1>
+                        <p class="text-gray-400 text-sm md:text-base">Start your journey to find your dream car</p>
+                    </div>
+
+                    <form id="signupForm" class="space-y-4 md:space-y-6" >
+                        <div>
+                            <input type="text" id="signupUsername" 
+                                   class="input-effect w-full bg-transparent text-white py-3 md:py-4 px-4 border-0 border-b-2 border-gray-600 focus:ring-0 focus:border-blue-500 placeholder-gray-500 text-sm md:text-base"
+                                   placeholder="Username" required>
+                            <p class="text-red-400 text-xs md:text-sm mt-1 md:mt-2 hidden" id="signupUsernameError">Username required</p>
+                        </div>
+
+                        <div>
+                            <input type="email" id="signupEmail" 
+                                   class="input-effect w-full bg-transparent text-white py-3 md:py-4 px-4 border-0 border-b-2 border-gray-600 focus:ring-0 focus:border-blue-500 placeholder-gray-500 text-sm md:text-base"
+                                   placeholder="Email Address" required>
+                            <p class="text-red-400 text-xs md:text-sm mt-1 md:mt-2 hidden" id="signupEmailError">Invalid email format</p>
+                        </div>
+
+                        <div class="relative">
+                            <input type="password" id="signupPassword" 
+                                   class="input-effect w-full bg-transparent text-white py-3 md:py-4 px-4 border-0 border-b-2 border-gray-600 focus:ring-0 focus:border-blue-500 placeholder-gray-500 pr-12 text-sm md:text-base"
+                                   placeholder="Password" required>
+                            <button type="button" onclick="togglePassword('signupPassword')" 
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-400 p-2">
+                                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </button>
+                            <p class="text-red-400 text-xs md:text-sm mt-1 md:mt-2 hidden" id="signupPasswordError">Min 6 characters</p>
+                        </div>
+
+                        <div class="relative">
+                            <input type="password" id="signupConfirmPassword" 
+                                   class="input-effect w-full bg-transparent text-white py-3 md:py-4 px-4 border-0 border-b-2 border-gray-600 focus:ring-0 focus:border-blue-500 placeholder-gray-500 pr-12 text-sm md:text-base"
+                                   placeholder="Confirm Password" required>
+                            <button type="button" onclick="togglePassword('signupConfirmPassword')" 
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-400 p-2">
+                                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </button>
+                            <p class="text-red-400 text-xs md:text-sm mt-1 md:mt-2 hidden" id="signupConfirmError">Passwords mismatch</p>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 md:py-4 rounded-xl font-semibold text-sm md:text-base hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+                            Signup
+                        </button>
+                    </form>
+
+                    <p class="text-center mt-4 md:mt-6 text-gray-400 text-xs md:text-sm">
+                        Already have an account? 
+                        <button onclick="toggleForms()" class="text-cyan-400 hover:text-blue-400 transition-colors">
+                            Login Here
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>       // Form Toggle
+    function toggleForms() {
+        document.querySelector('.form-card').classList.toggle('signup-mode');
+    }
+
+    // Password Toggle
+    function togglePassword(fieldId) {
+        const field = document.getElementById(fieldId);
+        const icon = field.nextElementSibling.querySelector('svg');
+        field.type = field.type === 'password' ? 'text' : 'password';
+        icon.classList.toggle('text-blue-400');
+    }
+
+    // Validation Functions
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePassword(password) {
+        return password.length >= 6;
+    }
+
+    // Real-time Validation
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', (e) => {
+            const field = e.target;
+            const formType = field.closest('form').id === 'loginForm' ? 'login' : 'signup';
+            
+            switch(field.id) {
+                case 'loginEmail':
+                case 'signupEmail':
+                    const emailError = document.getElementById(`${formType}EmailError`);
+                    emailError.classList.toggle('hidden', validateEmail(field.value));
+                    break;
+                    
+                case 'loginPassword':
+                    const passError = document.getElementById('loginPasswordError');
+                    passError.classList.toggle('hidden', field.value.length >= 6);
+                    break;
+                    
+                case 'signupUsername':
+                    const userError = document.getElementById('signupUsernameError');
+                    userError.classList.toggle('hidden', field.value.trim().length > 0);
+                    break;
+                    
+                case 'signupPassword':
+                    const signupPassError = document.getElementById('signupPasswordError');
+                    signupPassError.classList.toggle('hidden', validatePassword(field.value));
+                    break;
+                    
+                case 'signupConfirmPassword':
+                    const confirmError = document.getElementById('signupConfirmError');
+                    const password = document.getElementById('signupPassword').value;
+                    confirmError.classList.toggle('hidden', field.value === password);
+                    break;
+            }
+        });
+    });
+
+
+
+    function validateForm(formType) {
+        let isValid = true;
+        
+        if(formType === 'login') {
+            const email = document.getElementById('loginEmail');
+            const password = document.getElementById('loginPassword');
+            
+            if(!validateEmail(email.value)) {
+                document.getElementById('loginEmailError').classList.remove('hidden');
+                isValid = false;
+            }
+            if(!validatePassword(password.value)) {
+                document.getElementById('loginPasswordError').classList.remove('hidden');
+                isValid = false;
+            }
+        } else {
+            const username = document.getElementById('signupUsername');
+            const email = document.getElementById('signupEmail');
+            const password = document.getElementById('signupPassword');
+            const confirm = document.getElementById('signupConfirmPassword');
+            
+            if(username.value.trim() === '') {
+                document.getElementById('signupUsernameError').classList.remove('hidden');
+                isValid = false;
+            }
+            if(!validateEmail(email.value)) {
+                document.getElementById('signupEmailError').classList.remove('hidden');
+                isValid = false;
+            }
+            if(!validatePassword(password.value)) {
+                document.getElementById('signupPasswordError').classList.remove('hidden');
+                isValid = false;
+            }
+            if(password.value !== confirm.value) {
+                document.getElementById('signupConfirmError').classList.remove('hidden');
+                isValid = false;
+            }
+        }
+        
+        return isValid;
+    }
+    </script>
+  
+    
+    <script src="JS/main.js"></script>
+
+</body>
+</html>
